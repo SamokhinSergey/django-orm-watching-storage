@@ -14,8 +14,6 @@ def duration_and_check(duration):
 
 def passcard_info_view(request, passcode):
     passcard = Passcard.objects.filter(passcode=passcode)
-    print(passcard)
-    # Программируем здесь
     storage_user = Visit.objects.filter(passcard=passcard[0])
     user_visits = []
     for visit in storage_user:
