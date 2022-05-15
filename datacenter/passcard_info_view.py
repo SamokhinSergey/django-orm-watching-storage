@@ -5,8 +5,8 @@ from datacenter.time_tools import format_duration, check_suspicious
 
 
 def passcard_info_view(request, passcode):
-    passcards = Passcard.objects.filter(passcode=passcode)[0]
-    visits= Visit.objects.filter(passcard=passcards)
+    passcard = Passcard.objects.filter(passcode=passcode)[0]
+    visits = Visit.objects.filter(passcard=passcard)
     visits_serialized = []
     for visit in visits:
         duration_time = format_duration(visit.get_duration())
@@ -20,7 +20,7 @@ def passcard_info_view(request, passcode):
         visits_serialized.append(this_passcard_visits)
 
     context = {
-        'passcard': passcards,
+        'passcard': passcard,
         'this_passcard_visits': visits_serialized
     }
     return render(request, 'passcard_info.html', context)

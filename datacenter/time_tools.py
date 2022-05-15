@@ -8,4 +8,3 @@ def format_duration(duration):
 def check_suspicious(hours, minutes):
     suspicious = hours > 1 and minutes > 1
     return suspicious
-
