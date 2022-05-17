@@ -13,6 +13,18 @@ Then use `pip` (or `pip3`, if there is a conflict with Python2) to install depen
 ```
 pip install -r requirements.txt
 ```
+Create .env with config:
+```
+DB_ENGINE='YOUR ENGINE LIB'
+DB_HOST='YOUR HOSTNAME'
+DB_PORT='YOUR HOSTNAME PORT'
+DB_NAME='YOUR NAME OF DB'
+DB_USER='YOUR DATABASE USER'
+DB_PASSWORD='YOUR DATABASE PASSWORD'
+SECRET_KEY = 'YOUR SITE USER PASSWORD ENCRYPTION KEY'
+DEBUG='FALSE OR TRUE'
+ALLOWED_HOSTS=YOR ALLOWED HOST(You can use several hosts for example ALLOWED_HOSTS=aa.ru,ab.ru)
+```
 Run:
 ```
 python manage.py runserver 0.0.0.0:8000
